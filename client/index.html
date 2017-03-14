@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog Page</title>
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/paper/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+      .form-full-width {
+        width: 550px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Brand</a>
+        </div>
+      </div>
+    </nav>
+
+    <button type="button" id="create-article-btn" class="btn btn-info btn-lg" data-toggle="modal" data-target="#createArticle">Create Article</button>
+
+    <!-- Modal -->
+    <div id="createArticle" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Create Article</h4>
+          </div>
+          <div class="modal-body">
+            <form id="article-form" method="post">
+              <label> Title: <input class="form-control form-full-width" type="text" name="title"> </label><br>
+              <label> Details:  <input class="form-control form-full-width" type="text" name="details"></label><br>
+              <label> Slug: <input class="form-control form-full-width" type="text" name="slug"></label><br>
+              <button id="post-article-btn" class="btn btn-primary" onclick="createArticle()" data-dismiss="modal">Go Post</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="editArticle" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Edit Article</h4>
+          </div>
+          <div class="modal-body">
+            <form id="article-edit-form" method="post">
+              <label> Title: <input class="form-control form-full-width" type="text" name="title"> </label><br>
+              <label> Details:  <input class="form-control form-full-width" type="text" name="details"></label><br>
+              <label> Slug: <input class="form-control form-full-width" type="text" name="slug"></label><br>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <br>
+    <br>
+    <div id="article" class="row">
+
+    </div>
+
+  <script src="js/script.js"></script>
+  </body>
+</html>
